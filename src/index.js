@@ -8,9 +8,9 @@ import { getImages} from './search-api';
 const form = document.querySelector('.search-form'); 
 const gallery = document.querySelector('.gallery'); 
 const loadBtn = document.querySelector('.load-more'); 
-const btnSearch = document.querySelector('.search-form button'); 
+const searchBtn = document.querySelector('.search-form'); 
 
-btnSearch.disabled = true;
+searchBtn.disabled = true;
 loadBtn.classList.add('is-hidden');
 
 let query = '';
@@ -23,9 +23,9 @@ let lightbox = new SimpleLightbox('.gallery a', {
     navText: ['&#10094;', '&#10095;'],
 });
   
-form.addEventListener('input', onFormInput); 
-form.addEventListener('submit', onFormSubmit); 
-loadBtn.addEventListener('click', onClickLoadBtn); 
+form.addEventListener('input', onInputForm); 
+form.addEventListener('submit', onSubmit); 
+loadBtn.addEventListener('click', onClickLoad); 
 
   // Cтворення розмітки
 function renderGallery(array) {
@@ -72,19 +72,19 @@ function renderGallery(array) {
 
 
 
-function onFormInput(event) {
+function onInputForm(event) {
   event.preventDefault(); 
 
-  btnSearch.disabled = true;
+  searchBtn.disabled = true;
   const userInput = event.target.value.trim(); 
   if (userInput.trim() !== '') {
-    btnSearch.disabled = false;
+    searchBtn.disabled = false;
   }
 }
 
 
 
-async function onFormSubmit(event) { 
+async function onSubmit(event) { 
 
   event.preventDefault();
 
@@ -124,7 +124,7 @@ async function onFormSubmit(event) {
 
 
 
-async function onClickLoadBtn() {
+async function onClickLoad() {
   page += 1; 
   
   if (page === totalPage) {
