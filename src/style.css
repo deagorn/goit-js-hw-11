@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f1e8e6;
+  color: #361d32;
+  margin-top: 50px;
+}
+
+img {
+  display: block;
+}
+
+.is-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.search-form {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  width: 400px;
+  white-space: nowrap;
+}
+
+#search {
+  width: 400px;
+  height: 50px;
+  background: #361d32;
+  font-size: 16px;
+  float: left;
+  color: #f1e8e6;
+  padding-left: 15px;
+  border-radius: 20px;
+}
+#search::placeholder {
+  color: #f1e8e6;
+}
+
+.icon {
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: #543c52;
+  height: 50px;
+  width: 50px;
+  color: #f1e8e6;
+  opacity: 0;
+  transition: all 0.6s ease;
+  margin-left: -50px;
+}
+.search-form:hover button.icon,
+.search-form:active button.icon,
+.search-form:focus button.icon {
+  outline: none;
+  opacity: 1;
+}
+
+.search-form:hover button.icon:hover {
+  background: #f55951;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  width: 1280px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 20px auto;
+}
+
+.photo-card {
+  max-width: 300px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  background-color: #edd2cb;
+}
+
+.info-item {
+  text-align: center;
+  padding: 4px;
+}
+
+.load-more {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #f1e8e6 0 -3px 0 inset;
+  color: #36395a;
+  font-family: 'JetBrains Mono', monospace;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.load-more:hover,
+.load-more:focus {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #edd2cb 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
