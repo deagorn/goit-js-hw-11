@@ -13,7 +13,7 @@ async function getImages(page, query) { // функція отримання д�
     safesearch: true,
   });
 
-  return response = await axios.get(`${BASE_URL}?${params}`); // об'єкт, що містить результати запиту
+  const response = await axios.get(`${BASE_URL}?${params}`); // об'єкт, що містить результати запиту
+  return response;
 }
-
 export { getImages}; // експортуємо функцію й змінну
