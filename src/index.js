@@ -116,6 +116,7 @@ async function onSubmit(event) {
           }
         }
     } catch (error) {
+      console.log(error);
         Notify.failure(`Oops, something went wrong`); 
     } 
     
@@ -148,6 +149,7 @@ async function onClickLoad() {
       behavior: 'smooth',
     });
   } catch (error) {
+    console.log(error);
     Notify.failure(`Oops, something went wrong`);
   }
 }
